@@ -1,0 +1,12 @@
+{
+  "name": "pbl-project-chronicler",
+  "interface": { "displayName": "PBL Project Chronicler" },
+  "plugins": [
+    {
+      "name": "pbl-project-chronicler",
+      "source": { "source": "url", "url": "https://github.com/D4vRAM369/pbl-project-chronicler.git", "ref": "main" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

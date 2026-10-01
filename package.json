@@ -1,0 +1,38 @@
+{
+  "name": "pbl-project-chronicler",
+  "version": "1.0.0",
+  "description": "PBL skill for Claude Code, Codex & OpenCode: turns every dev session into learning docs (glossary, step-by-step, errors & fixes). 🇪🇸 Skill PBL para documentar tu proyecto mientras aprendes.",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "opencode",
+    "skill",
+    "agent-skills",
+    "pbl",
+    "documentation",
+    "learning"
+  ],
+  "license": "MIT",
+  "author": "D4vRAM369 (https://github.com/D4vRAM369)",
+  "homepage": "https://github.com/D4vRAM369/pbl-project-chronicler#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D4vRAM369/pbl-project-chronicler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/D4vRAM369/pbl-project-chronicler/issues"
+  },
+  "bin": {
+    "pbl-project-chronicler": "bin/install.js"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    ".agents/"
+  ],
+  "engines": {
+    "node": ">=16.7"
+  }
+}

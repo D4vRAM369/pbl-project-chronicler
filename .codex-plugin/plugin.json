@@ -1,0 +1,34 @@
+{
+  "name": "pbl-project-chronicler",
+  "version": "1.0.0",
+  "description": "PBL skill for Claude Code, Codex & OpenCode: turns every dev session into learning docs (glossary, step-by-step, errors & fixes). 🇪🇸 Skill PBL para documentar tu proyecto mientras aprendes.",
+  "author": {
+    "name": "D4vRAM369",
+    "url": "https://github.com/D4vRAM369"
+  },
+  "homepage": "https://github.com/D4vRAM369/pbl-project-chronicler",
+  "repository": "https://github.com/D4vRAM369/pbl-project-chronicler",
+  "license": "MIT",
+  "keywords": [
+    "pbl",
+    "documentation",
+    "learning",
+    "skill"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "PBL Project Chronicler",
+    "shortDescription": "Documenta tu proyecto mientras aprendes",
+    "longDescription": "PBL skill for Claude Code, Codex & OpenCode: turns every dev session into learning docs (glossary, step-by-step, errors & fixes). 🇪🇸 Skill PBL para documentar tu proyecto mientras aprendes.",
+    "developerName": "D4vRAM369",
+    "category": "Productivity",
+    "capabilities": [
+      "Instructions"
+    ],
+    "websiteURL": "https://github.com/D4vRAM369/pbl-project-chronicler",
+    "defaultPrompt": [
+      "Activa el chronicler y empieza a documentar este proyecto.",
+      "Cierra la sesión y genera el resumen."
+    ]
+  }
+}

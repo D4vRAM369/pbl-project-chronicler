@@ -1,0 +1,16 @@
+{
+  "name": "pbl-project-chronicler",
+  "description": "Skills PBL para documentar proyectos mientras aprendes.",
+  "owner": {
+    "name": "D4vRAM369",
+    "url": "https://github.com/D4vRAM369"
+  },
+  "plugins": [
+    {
+      "name": "pbl-project-chronicler",
+      "description": "PBL skill for Claude Code, Codex & OpenCode: turns every dev session into learning docs (glossary, step-by-step, errors & fixes). 🇪🇸 Skill PBL para documentar tu proyecto mientras aprendes.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
