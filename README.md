@@ -14,6 +14,9 @@ Una skill para **Claude Code**, **Codex** y **OpenCode** que convierte cada sesi
 ![Codex](https://img.shields.io/badge/Codex-plugin-111111)
 ![OpenCode](https://img.shields.io/badge/OpenCode-skill-4b5563)
 
+**ES** · [EN](README_english-version.md)
+
+
 </div>
 
 ---
