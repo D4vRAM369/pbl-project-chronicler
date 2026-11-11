@@ -1,6 +1,6 @@
 {
   "name": "pbl-project-chronicler",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "PBL skill for Claude Code, Codex & OpenCode: turns every dev session into learning docs (glossary, step-by-step, errors & fixes). 🇪🇸 Skill PBL para documentar tu proyecto mientras aprendes.",
   "keywords": [
     "claude-code",
