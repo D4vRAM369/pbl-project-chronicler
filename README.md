@@ -33,6 +33,11 @@ docs/
 ├── 05_ERRORES_Y_SOLUCIONES.md   ← Errores reales = oro pedagógico
 ├── 06_SIGUIENTE_NIVEL.md        ← Mejoras futuras
 ├── 07_COMANDOS_Y_MANUAL.md      ← Chuleta de comandos
+├── 08_DECISIONES.md             ← Qué se eligió y qué se descartó (ADR)
+├── 09_CHANGELOG.md              ← Diario de progreso
+├── HANDOFF.md                   ← Relevo entre sesiones: dónde retomar
+├── SPEC.md                      ← Qué debe hacer el proyecto (contrato)
+├── ROADMAP.md                   ← Fases, hitos y estado
 └── informes/                    ← Un informe por task terminada
 ```
 

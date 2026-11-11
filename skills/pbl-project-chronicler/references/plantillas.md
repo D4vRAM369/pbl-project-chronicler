@@ -63,7 +63,11 @@ Lee los archivos en este orden:
 6. `05_ERRORES_Y_SOLUCIONES.md` — Cuando algo no funcione, mira aquí.
 7. `06_SIGUIENTE_NIVEL.md` — Qué podrías mejorar o añadir.
 8. `07_COMANDOS_Y_MANUAL.md` — Comandos y manual de uso.
-9. `informes/` — Informes incrementales por task.
+9. `08_DECISIONES.md` — Qué se eligió, qué se descartó y por qué.
+10. `09_CHANGELOG.md` — Diario de progreso.
+11. `informes/` — Informes incrementales por task.
+
+Documentos de trabajo vivos (sin número, fuera del orden de lectura): `SPEC.md` (qué debe hacer), `ROADMAP.md` (en qué orden), `HANDOFF.md` (por dónde retomar).
 
 ---
 
@@ -489,4 +493,132 @@ Si quieres entender mejor este stack, estudia estos temas en este orden:
 ---
 
 *Documentación completada el [fecha].*
+```
+
+---
+
+## Plantilla: HANDOFF.md
+
+```markdown
+# HANDOFF — [Nombre del Proyecto]
+
+> Nota de relevo. Se SOBRESCRIBE cada sesión: es una foto del presente.
+> Historial → `03_PASO_A_PASO.md`.
+
+**Actualizado:** [fecha] · **Sesión:** [N] · **Herramienta/agente:** [Claude Code / Codex / …]
+
+## Estado en una frase
+[Ej.: «Login funciona; falta persistir la sesión.»]
+
+## Qué funciona / qué está roto
+- ✅ [cosa que funciona]
+- ❌ [cosa rota, con síntoma exacto]
+
+## Siguiente paso exacto
+[El primer archivo a abrir o comando a ejecutar. Concreto, sin ambigüedad.]
+
+## Contexto que no está en el código
+- [Decisión reciente y su motivo]
+- [Trampa conocida / idea a medias / cosa que NO hay que tocar]
+
+## Cómo arrancar y probar
+[comandos mínimos — detalle en 07_COMANDOS_Y_MANUAL.md]
+
+## Archivos tocados en la última sesión
+- `ruta/archivo` — [qué cambió]
+```
+
+---
+
+## Plantilla: SPEC.md
+
+```markdown
+# SPEC — [Nombre del Proyecto]
+
+> Contrato del proyecto: qué DEBE hacer. Si no está aquí, no es requisito.
+> Crece con el proyecto; los IDs son estables (no renumerar).
+
+## Propósito y usuario
+[Qué problema resuelve y para quién, en 2-3 frases.]
+
+## Requisitos funcionales
+| ID | Requisito | Criterio de aceptación | Estado |
+|---|---|---|---|
+| RF-01 | [el sistema permite…] | [cómo se comprueba que está hecho] | ⬜ |
+
+## Requisitos no funcionales
+| ID | Requisito | Criterio |
+|---|---|---|
+| RNF-01 | [rendimiento / privacidad / compatibilidad…] | [medible] |
+
+## Fuera de alcance
+- [Lo que NO se hará (por ahora) y por qué]
+
+## Preguntas abiertas
+- [Duda sin resolver que afecta al diseño]
+
+## Historial de cambios del spec
+| Fecha | Cambio | Motivo |
+|---|---|---|
+```
+
+---
+
+## Plantilla: ROADMAP.md
+
+```markdown
+# ROADMAP — [Nombre del Proyecto]
+
+> Orden de construcción. Leyenda: ⬜ pendiente · 🔄 en curso · ✅ hecho
+
+| Fase | Objetivo | Cubre (SPEC) | Estado | Fecha |
+|---|---|---|---|---|
+| 0 | [Setup y esqueleto] | — | ⬜ | |
+| 1 | [Primer resultado visible] | RF-01 | ⬜ | |
+
+## Ahora
+[Lo que se está haciendo en esta fase.]
+
+## Después
+[Siguientes 1-2 fases, ya definidas.]
+
+## Algún día
+[Ideas sin compromiso → al madurar, pasan a fase y a `06_SIGUIENTE_NIVEL.md`.]
+```
+
+---
+
+## Plantilla: 08_DECISIONES.md
+
+```markdown
+# Decisiones — [Nombre del Proyecto]
+
+> Registro append-only. Una entrada por decisión. Si se revierte, se añade una entrada nueva que la sustituye.
+
+## D-001 · [Título corto] · [fecha]
+**Estado:** Vigente | Sustituida por D-00X
+**Contexto:** [qué problema o duda había]
+**Decisión:** [qué se eligió]
+**Alternativas descartadas:** [opción — por qué no]
+**Consecuencias:** [qué se gana, qué se paga]
+```
+
+---
+
+## Plantilla: 09_CHANGELOG.md
+
+```markdown
+# Changelog — [Nombre del Proyecto]
+
+> Diario de progreso (lo más reciente arriba).
+
+## [fecha o versión]
+### Añadido
+- [...]
+### Cambiado
+- [...]
+### Corregido
+- [...]
+### Eliminado
+- [...]
 ```

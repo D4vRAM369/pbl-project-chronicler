@@ -33,6 +33,9 @@ Convertir cada sesión de desarrollo en documentación de aprendizaje de alto va
 ```
 docs/
 ├── README.md                    ← Portada del proyecto
+├── HANDOFF.md                   ← Relevo entre sesiones/agentes: estado actual y qué hacer ahora
+├── SPEC.md                      ← Especificación: qué DEBE hacer el proyecto (contrato)
+├── ROADMAP.md                   ← Hoja de ruta: fases, hitos y estado
 ├── 00_GLOSARIO.md               ← Términos técnicos explicados (actualizar siempre)
 ├── 01_SETUP.md                  ← Configuración inicial del entorno
 ├── 02_ARQUITECTURA.md           ← Decisiones de diseño y estructura
@@ -41,10 +44,21 @@ docs/
 ├── 05_ERRORES_Y_SOLUCIONES.md   ← Errores reales encontrados y cómo se resolvieron
 ├── 06_SIGUIENTE_NIVEL.md        ← Qué podría mejorarse o expandirse
 ├── 07_COMANDOS_Y_MANUAL.md      ← Referencia de comandos y manual de uso
+├── 08_DECISIONES.md             ← Registro de decisiones (ADR): qué se eligió, qué se descartó y por qué
+├── 09_CHANGELOG.md              ← Diario de progreso: qué cambió y cuándo
 └── informes/                    ← Informes incrementales por task (YYYY-MM-DD-slug.md)
 ```
 
 Crear todos los archivos aunque estén vacíos al inicio, con sus encabezados base (ver `references/plantillas.md`).
+
+> **`HANDOFF.md`, `SPEC.md`, `ROADMAP.md`:** viven en la raíz de `docs/` **sin número** (no forman parte de la lectura didáctica 00→09, son documentos de trabajo vivos). Crecen a la par del proyecto: nunca se reescriben de cero, se actualizan en el momento.
+> - **`SPEC.md`** — contrato del proyecto: qué hace, para quién, requisitos (funcionales / no funcionales) con criterio de aceptación, fuera de alcance y preguntas abiertas. Responde a *«¿qué es "terminado"?»*. IDs de requisito **estables** (RF-01…): no renumerar; lo descartado se tacha con su motivo.
+> - **`ROADMAP.md`** — fases/hitos con estado (⬜ pendiente · 🔄 en curso · ✅ hecho), cada uno enlazado a los requisitos de `SPEC` que cubre. Responde a *«¿en qué orden lo construimos?»*.
+> - **`HANDOFF.md`** — nota de relevo para quien retome el trabajo (el propio usuario en una semana, otra sesión, otro agente). Se **sobrescribe** cada sesión: es una foto del presente; el historial está en `03_PASO_A_PASO`. Responde a *«si abro esto en frío, ¿por dónde empiezo?»*.
+>
+> **`08_DECISIONES.md` y `09_CHANGELOG.md`:** complementarios, al final de la serie.
+> - **`08_DECISIONES.md`** — una entrada por decisión (fecha · contexto · decisión · alternativas descartadas · consecuencias). Solo se añade: si se revierte, una entrada nueva la sustituye. Complementa a `02_ARQUITECTURA` (diseño *actual*) con el *porqué no X*.
+> - **`09_CHANGELOG.md`** — diario de progreso, lo más reciente arriba (Añadido / Cambiado / Corregido / Eliminado). Sirve para ver el avance personal aunque el repo no sea público.
 
 ### 2. Preguntar si `docs/` se versiona
 
@@ -98,6 +112,11 @@ Los archivos se crearán/actualizarán en docs/
 | Se aprende un concepto nuevo | `04_CONCEPTOS.md` |
 | Aparece un comando o uso nuevo de la herramienta | `07_COMANDOS_Y_MANUAL.md` |
 | Se termina una task con entidad propia | `informes/YYYY-MM-DD-slug.md` |
+| Se define, cambia o descarta un requisito / alcance | `SPEC.md` (y `ROADMAP.md` si mueve fases) |
+| Se completa, aplaza o añade un hito / fase | `ROADMAP.md` (marcar estado + fecha) |
+| Se cierra sesión, se pausa o se cambia de herramienta/agente | `HANDOFF.md` (sobrescribir) |
+| Se elige entre alternativas (librería, patrón, enfoque) | `08_DECISIONES.md` (nueva entrada) |
+| Se añade, cambia, corrige o elimina algo visible | `09_CHANGELOG.md` (arriba del todo) |
 
 ### Informe incremental por task
 
@@ -188,6 +207,8 @@ Las plantillas completas y copiables están en `references/plantillas.md`. Las t
 
 ### Al final de cada sesión (o con "cierra la sesión")
 
+Antes del resumen: añadir a `09_CHANGELOG.md` lo de la sesión, registrar en `08_DECISIONES.md` las decisiones tomadas, reconciliar `SPEC.md` y `ROADMAP.md`, y **sobrescribir `HANDOFF.md`** con el estado real.
+
 ```markdown
 ## Sesión [N] — [fecha]
 
@@ -229,6 +250,8 @@ Las plantillas completas y copiables están en `references/plantillas.md`. Las t
 | "¿en qué paso estamos?" | Muestra el estado actual de la documentación |
 | "documenta el error" | Documenta el error actual en `05_ERRORES_Y_SOLUCIONES.md` |
 | "genera el README" | Genera/actualiza `docs/README.md` con el estado actual |
+| "actualiza el handoff" / "el spec" / "el roadmap" | Sobrescribe `HANDOFF.md` / reconcilia `SPEC.md` / `ROADMAP.md` con lo construido |
+| "registra la decisión" / "actualiza el changelog" | Nueva entrada en `08_DECISIONES.md` / `09_CHANGELOG.md` |
 
 ---
 
