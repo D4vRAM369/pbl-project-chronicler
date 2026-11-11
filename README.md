@@ -14,6 +14,9 @@ Una skill para **Claude Code**, **Codex** y **OpenCode** que convierte cada sesi
 ![Codex](https://img.shields.io/badge/Codex-plugin-111111)
 ![OpenCode](https://img.shields.io/badge/OpenCode-skill-4b5563)
 
+**ES** · [EN](README_english-version.md)
+
+
 </div>
 
 ---
@@ -21,6 +24,8 @@ Una skill para **Claude Code**, **Codex** y **OpenCode** que convierte cada sesi
 ## ¿Qué hace?
 
 Le dices a tu agente **"activa el chronicler"** y, mientras programas, escribe por ti una carpeta `docs/` pensada para que *tú dentro de seis meses* — o alguien que nunca ha programado — pueda reproducir lo que hiciste y entender **por qué**.
+
+También es **un Plus bastante interesante para cualquier sesión de vibe coding, para aprender de cada paso y documentar todo ese conocimiento potencial** para ser estudiado y analizado cuando quieras.
 
 ```
 docs/
