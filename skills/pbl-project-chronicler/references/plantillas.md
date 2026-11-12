@@ -65,7 +65,8 @@ Lee los archivos en este orden:
 8. `07_COMANDOS_Y_MANUAL.md` — Comandos y manual de uso.
 9. `08_DECISIONES.md` — Qué se eligió, qué se descartó y por qué.
 10. `09_CHANGELOG.md` — Diario de progreso.
-11. `informes/` — Informes incrementales por task.
+11. `10_CLASE_DAW_DAM.md` — (Opcional) El proyecto explicado como una clase, con ejercicios.
+12. `informes/` — Informes incrementales por task.
 
 Documentos de trabajo vivos (sin número, fuera del orden de lectura): `SPEC.md` (qué debe hacer), `ROADMAP.md` (en qué orden), `HANDOFF.md` (por dónde retomar).
 
@@ -145,6 +146,8 @@ Resultado: [qué demuestra la verificación]
 
 > Si encuentras una palabra que no entiendes en cualquier parte de esta documentación, búscala aquí.
 > Están ordenadas alfabéticamente y explicadas para alguien que empieza desde cero.
+> Regla: cada término se define en línea la primera vez que aparece en un documento y se añade aquí en ese mismo momento.
+> Términos que no deben faltar: padding / margin, dp, listener, layout, XML, compilar, build, adb, regex, lambda, hash, ViewModel, API, JSON, terminal, PATH.
 
 ---
 
@@ -153,7 +156,8 @@ Resultado: [qué demuestra la verificación]
 **En una frase:** [definición sin jerga]  
 **Más técnico:** [definición precisa]  
 **Analogía:** [comparación con algo cotidiano]  
-**En este proyecto:** [cómo y dónde aparece]
+**En este proyecto:** [cómo y dónde aparece]  
+**Aparece por primera vez en:** [archivo y sección]
 
 ```[lenguaje si aplica]
 // Ejemplo mínimo
@@ -285,6 +289,32 @@ Ver `05_ERRORES_Y_SOLUCIONES.md` para errores específicos encontrados durante e
 **Convenciones de nombrado:**
 - [Regla 1]
 - [Regla 2]
+
+---
+
+## Contrato visual (solo si hay interfaz y una maqueta aprobada)
+
+> La maqueta aprobada manda. Si lo implementado se aparta de ella, se registra aquí y en `08_DECISIONES.md`.
+
+**Referencia aprobada:** [ruta del archivo o enlace: `docs/maquetas/pantalla-principal.png`]  
+**Aprobada por / fecha:** [quién] · [fecha]
+
+**Qué muestra (descripción textual, por si la imagen se pierde):**
+- [Componente 1: tipo exacto, posición, texto/icono]
+- [Componente 2: ...]
+- [Qué debe quedar SIEMPRE visible: p. ej. los iconos de la barra superior]
+
+**Componente implementado por cada elemento de la maqueta:**
+
+| Elemento de la maqueta | Componente usado | ¿Igual a la maqueta? |
+|---|---|---|
+| [barra superior con 3 iconos] | [`TopBar`] | Sí |
+
+**Desviaciones registradas:**
+
+| Fecha | Qué difiere | Por qué | Aprobado por | Decisión |
+|---|---|---|---|---|
+| | | | | D-00X |
 ```
 
 ---
@@ -305,28 +335,39 @@ Ver `05_ERRORES_Y_SOLUCIONES.md` para errores específicos encontrados durante e
 
 ### Paso 1: [Nombre descriptivo]
 
-**Qué vamos a hacer:** [Una frase clara]  
-**Por qué lo hacemos:** [La motivación o razón técnica]  
+**Qué problema resuelve:** [El dolor concreto, en 1-2 frases]  
+**Por qué esta solución y no otra:** [Razón + al menos una alternativa descartada y su motivo]  
 **Resultado esperado:** [Qué debería pasar al terminar]
+
+**Términos nuevos en este paso:** [término (definición breve con analogía)] → añadidos al glosario.
 
 **Instrucciones:**
 
-[Explicación en prosa antes del código]
+1. [Acción 1 con archivo exacto: «Abre `app/src/main/res/layout/pantalla.xml`»]
+2. [Acción 2 con comando exacto: «En la terminal, dentro de la carpeta del proyecto, ejecuta:»]
+
+```bash
+[comando copiable]
+```
+
+3. [Acción 3: «Escribe este código completo en `ruta/archivo.ext`»]
 
 ```[lenguaje]
-// [Comentario explicando el bloque, no la línea obvia]
-[código]
-
-// [Siguiente sección lógica]
+// Archivo: ruta/exacta/archivo.ext
+// Código completo mínimo (sin «...»), un comentario por línea relevante
 [código]
 ```
 
 > 💡 **Insight:** [Algo que vale la pena entender sobre este paso. Un "aha moment".]
 
-> ⚠️ **Trampa común:** [Error que se puede cometer aquí y por qué ocurre]
+> ⚠️ **Trampa común:** [Error que se puede cometer aquí y por qué ocurre → enlace a su entrada en 05]
 
 **¿Cómo verifico que funcionó?**  
-[Instrucción concreta: "Deberías ver X", "Si ejecutas Y debería aparecer Z"]
+[Acción concreta + resultado esperado: «Ejecuta X; debe aparecer Y». Qué verías si NO funcionó.]
+
+**Fundamentos detrás de este paso:** ver `04_CONCEPTOS.md` → [sección]
+
+**Contrato visual:** [«Conforme a la maqueta» o «Desviación: ver D-00X»] (solo si hay UI)
 
 ---
 
@@ -359,7 +400,11 @@ Ver `05_ERRORES_Y_SOLUCIONES.md` para errores específicos encontrados durante e
 
 ### La idea central
 
-[Explicación del concepto desde cero. Sin asumir nada.]
+[Explicación del concepto desde cero. Sin asumir nada. Cada término técnico, definido en línea la primera vez.]
+
+### Fundamento de programación / lógica
+
+[La idea general que hay debajo y sirve en cualquier lenguaje: p. ej. «una condición es una pregunta de sí/no; el programa elige un camino según la respuesta»; «una variable es una caja con nombre»; «un evento es un aviso que el sistema envía cuando algo ocurre».]
 
 ### ¿Por qué existe este concepto?
 
@@ -411,37 +456,52 @@ Ver `05_ERRORES_Y_SOLUCIONES.md` para errores específicos encontrados durante e
 ## Error #[N]: [Título descriptivo]
 
 **Fecha:** [cuándo ocurrió]  
-**Contexto:** [qué se estaba intentando hacer en ese momento]
+**Gravedad:** [Bloquea / Molesta / Cosmético]
 
-**El error exacto:**
+### 1. Contexto
+
+[Qué se intentaba hacer, en qué archivo o pantalla, con qué herramientas y versiones. Lo justo para que otra persona recree la situación.]
+
+### 2. Qué falló (lo que se VE)
 
 ```
 [mensaje de error completo, sin editar]
 ```
 
-**Por qué ocurre:**
+[Si no hay mensaje: describe lo que aparece en pantalla («la barra superior no muestra los iconos»). Solo el síntoma, sin interpretarlo aún.]
 
-[Explicación de la causa raíz. No solo "porque X falló" sino el mecanismo que lo produce. Esto es lo que convierte un error en aprendizaje.]
+### 3. Por qué se originó
 
-**Cómo se resolvió:**
+[Causa raíz explicada sin jerga y encadenada: «Pasó A; por eso ocurrió B; por eso se vio el síntoma C». Cada término técnico, definido en línea con una analogía breve la primera vez.]
 
-[Pasos exactos, en orden]
+### 4. Cómo se solucionó
 
-```[lenguaje si aplica]
-// Lo que había antes (incorrecto)
+1. [Paso 1. Ej.: «Abre el archivo `ruta/exacta/archivo.ext`.»]
+2. [Paso 2. Ej.: «Busca la línea `...` y sustitúyela por esta:»]
+
+```[lenguaje]
+// ANTES (incorrecto)
 [código incorrecto]
 
-// Lo que pusimos (correcto)
-[código correcto]
+// DESPUÉS (correcto) — comentario por cada línea relevante
+[código correcto completo mínimo]
 ```
 
-**Qué aprendimos:**
+3. [Paso 3. Ej.: «En la terminal, desde la carpeta del proyecto, ejecuta:»]
 
-[El insight que queda. Si alguien lee solo esta parte, ¿qué debería llevarse?]
+```bash
+[comando exacto]
+```
 
-**Cómo evitarlo en el futuro:**
+### 5. Cómo comprobar que funcionó
 
-[Práctica o patrón que previene este error]
+[Acción concreta + resultado esperado: «Ejecuta X; debe aparecer Y». Opcional: qué verías si sigue fallando.]
+
+### 6. Qué aprendimos
+
+[La lección generalizable en 1-3 frases y cómo evitarlo la próxima vez. Si alguien lee solo esto, ¿qué debería llevarse?]
+
+**Términos nuevos añadidos al glosario:** [lista]
 
 ---
 ```
@@ -601,6 +661,7 @@ Si quieres entender mejor este stack, estudia estos temas en este orden:
 **Decisión:** [qué se eligió]
 **Alternativas descartadas:** [opción — por qué no]
 **Consecuencias:** [qué se gana, qué se paga]
+**Desviación de la maqueta:** [solo si aplica: qué difiere del contrato visual, por qué y quién lo aprobó]
 ```
 
 ---
@@ -621,4 +682,66 @@ Si quieres entender mejor este stack, estudia estos temas en este orden:
 - [...]
 ### Eliminado
 - [...]
+```
+
+---
+
+## Plantilla: 07_COMANDOS_Y_MANUAL.md
+
+```markdown
+# Comandos y Manual de Uso — [Nombre del Proyecto]
+
+> Cada comando usado en el proyecto, explicado. Copia, pega, entiende.
+
+## Cómo abrir una terminal
+[Instrucción por sistema operativo. Una terminal es una ventana donde escribes órdenes al ordenador en vez de hacer clic.]
+
+## Comandos del proyecto
+
+| Comando | Qué hace | Cuándo usarlo | Resultado esperado |
+|---|---|---|---|
+| `[comando]` | [explicación; cada flag explicado] | [situación] | [salida] |
+
+## Cómo probar / instalar / depurar
+1. [Paso exacto]
+2. [Paso exacto]
+```
+
+---
+
+## Plantilla: 10_CLASE_DAW_DAM.md (opcional)
+
+```markdown
+# Clase — [Nombre del Proyecto]
+
+> El proyecto convertido en una clase de ciclo formativo (DAM/DAW) para alguien que parte de cero.
+
+## Objetivos de aprendizaje
+- [Al terminar sabrás…]
+
+## Requisitos previos
+- [Solo lo imprescindible, con enlace al glosario]
+
+## Lección N: [Título]
+**Concepto:** [enlace a `04_CONCEPTOS.md`]  
+**Ejercicio guiado:** [pasos numerados reproducibles]  
+**Ejercicio propio:** [variación para practicar]  
+**Cómo saber que lo hiciste bien:** [resultado esperado]
+```
+
+---
+
+## Lista de comprobación antes de dar una entrada por terminada
+
+Copiar al final de cada sesión y repasar las entradas nuevas:
+
+```markdown
+- [ ] ¿Puede alguien sin contexto reproducirla de principio a fin?
+- [ ] ¿Hay términos sin definir (en línea y en el glosario)?
+- [ ] ¿Están las rutas exactas de archivos y los comandos exactos?
+- [ ] ¿El código es completo (sin «...») y comentado donde importa?
+- [ ] ¿Se explica el porqué y al menos una alternativa descartada?
+- [ ] ¿Hay resultado esperado comprobable?
+- [ ] (UI) ¿Contrastado con el contrato visual y desviaciones registradas?
+- [ ] ¿Fundamentos en 04_CONCEPTOS.md y cambio en 09_CHANGELOG.md?
 ```
