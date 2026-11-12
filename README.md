@@ -40,6 +40,7 @@ docs/
 ├── 07_COMANDOS_Y_MANUAL.md      ← Chuleta de comandos
 ├── 08_DECISIONES.md             ← Qué se eligió y qué se descartó (ADR)
 ├── 09_CHANGELOG.md              ← Diario de progreso
+├── 10_CLASE_DAW_DAM.md          ← (Opcional) El proyecto como clase con ejercicios
 ├── HANDOFF.md                   ← Relevo entre sesiones: dónde retomar
 ├── SPEC.md                      ← Qué debe hacer el proyecto (contrato)
 ├── ROADMAP.md                   ← Fases, hitos y estado
@@ -95,11 +96,13 @@ cp -r pbl-project-chronicler/skills/pbl-project-chronicler ~/.claude/skills/
 | "activa el chronicler" | Crea `docs/` y empieza a documentar |
 | "documenta esto" | Documenta el código/decisión actual |
 | "añade al glosario: X" | Añade el término con analogía y ejemplo |
-| "documenta el error" | Registra causa raíz y solución |
+| "documenta el error" | Registra el error con las 6 partes: contexto, síntoma, causa raíz, pasos numerados, verificación y lección |
+| "revisa la documentación" | Pasa la lista de comprobación y completa huecos |
+| "registra la maqueta" | Guarda la referencia visual aprobada (contrato visual) |
 | "haz informe de la task" | Crea `docs/informes/YYYY-MM-DD-slug.md` |
 | "cierra la sesión" | Resumen de sesión + actualiza todo |
 
-> 💡 Al activarse pregunta si `docs/` va al repo o a `.gitignore` (documentación local de aprendizaje).
+> 💡 Por defecto `docs/` queda fuera de Git (se añade a `.gitignore`): es documentación local de aprendizaje. Solo se versiona si lo pides.
 
 ## Principios
 
@@ -107,6 +110,12 @@ cp -r pbl-project-chronicler/skills/pbl-project-chronicler ~/.claude/skills/
 2. **Los errores son contenido premium.**
 3. **Reproducible por un extraño.**
 4. **El camino imperfecto es el más educativo** — no se reescribe la historia.
+5. **Cada término se define la primera vez que aparece** (en línea y en el glosario).
+6. **Errores reproducibles:** contexto · síntoma · causa raíz · pasos numerados · cómo comprobarlo · lección.
+7. **Contrato visual:** si hay maqueta aprobada, se respeta y se registran las desviaciones.
+8. **Lista de comprobación** antes de dar una entrada por terminada.
+
+Pensada para que alumnos de DAM/DAW sin experiencia puedan reproducir todo paso a paso.
 
 ## Estructura del repo
 

@@ -38,6 +38,7 @@ docs/
 ├── 05_ERRORES_Y_SOLUCIONES.md   ← Real errors = educational gold
 ├── 06_SIGUIENTE_NIVEL.md        ← Future improvements
 ├── 07_COMANDOS_Y_MANUAL.md      ← Command cheat sheet
+├── 10_CLASE_DAW_DAM.md          ← (Optional) The project as a class with exercises
 └── informes/                    ← One report per completed task
 ```
 
@@ -94,11 +95,13 @@ cp -r pbl-project-chronicler/skills/pbl-project-chronicler ~/.claude/skills/
 | "activate the chronicler" | Creates `docs/` and starts documenting |
 | "document this" | Documents the current code or decision |
 | "add to the glossary: X" | Adds the term with an analogy and example |
-| "document the error" | Records the root cause and solution |
+| "document the error" | Records the error in 6 parts: context, symptom, root cause, numbered steps, verification and lesson |
+| "review the documentation" | Runs the checklist and fills the gaps |
+| "register the mockup" | Stores the approved visual reference (visual contract) |
 | "create a task report" | Creates `docs/informes/YYYY-MM-DD-slug.md` |
 | "close the session" | Creates a session summary and updates everything |
 
-> 💡 When activated, it asks whether `docs/` should be committed to the repository or added to `.gitignore` as local learning documentation.
+> 💡 By default `docs/` stays out of Git (added to `.gitignore`): it is local learning documentation. It is only committed if you ask.
 
 ## Principles
 
@@ -106,6 +109,12 @@ cp -r pbl-project-chronicler/skills/pbl-project-chronicler ~/.claude/skills/
 2. **Errors are premium content.**
 3. **Reproducible by a stranger.**
 4. **The imperfect path is the most educational one** — history should not be rewritten.
+5. **Every term is defined the first time it appears** (inline and in the glossary).
+6. **Reproducible errors:** context · symptom · root cause · numbered steps · how to verify · lesson.
+7. **Visual contract:** if a mockup was approved, it is followed and any deviation is recorded.
+8. **Checklist** before an entry is considered done.
+
+Designed so that beginner vocational-training (DAM/DAW) students can reproduce everything step by step.
 
 ## Repository Structure
 
